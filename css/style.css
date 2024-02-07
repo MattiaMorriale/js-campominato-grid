@@ -38,10 +38,6 @@ body{
     height: calc(100px - 20px);
 }
 
-.cell-clicked {
-	background-color: rgb(157, 197, 199);
-}
-
 /* CSS */
 .button-55 {
   align-self: center;
@@ -72,6 +68,10 @@ body{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+.cell-clicked{
+	background-color: rgb(85, 188, 193);
 }
 
 .button-55:hover {
