@@ -9,7 +9,7 @@
 }
 
 .game-container{
-    width: 600px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -17,6 +17,9 @@
 
 body{
     background-color: rgb(255, 255, 255);
+
+    background-image: url(../img/paper-3.jpg);
+    background-size: cover;
 }
 
 .game-board{
@@ -34,8 +37,18 @@ body{
 }
 
 .cell{
+    width: calc(116px - 20px);
+    height: calc(116px - 20px);
+}
+
+.cell-81{
     width: calc(100px - 20px);
     height: calc(100px - 20px);
+}
+
+.cell-100{
+    width: calc(90px - 20px);
+    height: calc(90px - 20px);
 }
 
 /* CSS */
