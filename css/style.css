@@ -14,13 +14,23 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+
+    position: relative;
+
+    z-index: 99;
 }
 
 body{
     background-color: rgb(255, 255, 255);
 
     background-image: url(../img/paper-3.jpg);
-    background-size: cover;
+    background-size: 100vw;
+    background-position: initial;
+}
+
+#tommaso{
+    width: 100%;
+    height: 100%;
 }
 
 h1{
