@@ -6,6 +6,7 @@
 
 .score-container{
     padding: 20px;
+    padding-top: 0;
 }
 
 .game-container{
@@ -20,6 +21,11 @@ body{
 
     background-image: url(../img/paper-3.jpg);
     background-size: cover;
+}
+
+h1{
+    font-family: 'Rubik Doodle Shadow', system-ui, sans-serif;
+    font-size: 60px;
 }
 
 .game-board{

@@ -39,6 +39,7 @@ function () {
         cell.classList.add('cell','button-55');
         cell.classList.add(classed);
 
+        cell.innerHTML = i;
         
         
     
@@ -48,7 +49,6 @@ function () {
             // ! Controllo che la cella non sia stata già cliccata
             cell.classList.toggle('cell-clicked');
 
-            cell.innerHTML = i;
         
             console.log(this);
             
