@@ -1,4 +1,3 @@
-const scoreCounter = document.querySelector('.score-counter');
 const grid = document.querySelector('.grid')
 const playButton = document.querySelector('#play');
 const endGameScreen = document.querySelector('.end-game-screen');
@@ -123,6 +122,7 @@ function endGame(isVictory) {
 
 // Funzione per aggiornare il punteggio
 function updateScore() {
+    const scoreCounter = document.querySelector('.score-counter');
     // Lo inserisco nel contatore
     scoreCounter.innerText = elementClicked.length;
     // Controlliamo se l'utente ha vinto
