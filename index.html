@@ -24,7 +24,6 @@
             <div class="score-container d-flex gap-3 flex-wrap ">
                 <div class="d-flex justify-content-between w-100">
                     <select class="button-55" id="mode">
-                        <option selected>Scegli la Modalità</option>
                         <option value="1">Facile</option>
                         <option value="2">Medio</option>
                         <option value="3">Difficile</option>
@@ -34,7 +33,7 @@
                 </div>
                 <div class="score">
                     <span class="score-label">SCORE</span>
-                    <span class="score-counter">00000</span>
+                    <span class="score-counter">0</span>
                 </div>
             </div>
             
@@ -42,8 +41,9 @@
             <div class="game-board">
                 <div class="grid"></div>
                 <div class="end-game-screen hidden">
-                    <h2 class="end-game-text">Game<br>Over</h2>
-                    <button class="play-again">Gioca ancora</button>
+                    <img class="img-fluid" id="boom" src="img/boom_preview_rev_1.png" alt="#">
+                    <img class="img-fluid hidden" id="you-win" src="img/you-win_preview_rev_1.png" alt="#">
+                    <button class="play-again button-55">Gioca ancora</button>
                 </div>
             </div>
     

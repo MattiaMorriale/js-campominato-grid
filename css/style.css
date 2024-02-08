@@ -20,6 +20,7 @@
     margin-top: 50px;
 
     position: relative;
+    padding: 0 20px;
 
     z-index: 99;
 }
@@ -53,17 +54,16 @@ h1{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
 }
 
 .cell{
-    width: calc(110px - 20px);
-    height: calc(110px - 20px);
+    width: calc(113px - 20px);
+    height: calc(113px - 20px);
 }
 
 .cell-81{
-    width: calc(90px - 20px);
-    height: calc(90px - 20px);
+    width: calc(92px - 20px);
+    height: calc(92px - 20px);
 }
 
 .cell-100{
@@ -126,6 +126,33 @@ h1{
 
 .button-55:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+/* Schermata di fine gioco */
+.end-game-screen {
+	background-color: rgba(241, 117, 78, 0.6);
+	position: absolute;
+    width: 650px;
+    height: 650px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.win {
+	background-color: rgba(78, 241, 187, 0.6);
+}
+
+.end-game-text {
+	font-size: 48px;
+	line-height: 1.2;
+	margin-bottom: 16px;
 }
 
 .hidden {

@@ -3,54 +3,19 @@ const grid = document.querySelector('.grid')
 const playButton = document.querySelector('#play');
 const endGameScreen = document.querySelector('.end-game-screen');
 const endGameText = document.querySelector('.end-game-text');
-const playAgainButton = document.querySelector('.play-again')
+const playAgainButton = document.querySelector('.play-again');
+const boomElement = document.querySelector('#boom');
+const winElement = document.querySelector('#you-win');
 
 const totalBombs = 16;
 const bombsList = [];
+const elementClicked = [];
 let score = 0;
-
-
-
-function endGame(isVictory) {
-    if (isVictory === true) {
-      // Coloriamo di verde e cambiamo il messaggio
-      endGameScreen.classList.add('win');
-      endGameText.innerHTML = 'YOU<br>WIN';
-    } else {
-      // Riveliamo tutte le bombe
-      revealAllBombs();
-    }
-  
-    // Mostriamo la schermata rimuovendo la classe
-    endGameScreen.classList.remove('hidden');
-}
-
-// Funzione per aggiornare il punteggio
-function updateScore() {
-    if (cell.classList.contain('cell-clicked')) {
-    } else {
-        // Incremento lo score
-        score++;
-    }
-    
-    // Lo inserisco nel contatore
-    scoreCounter.innerText = String(score).padStart(3, 0);
-    // Controlliamo se l'utente ha vinto
-    if (score === maxScore) endGame(true);
-}
-  
+let numberCell = 0
 
 playButton.addEventListener('click',
 function () {
-
-    // Generare TOT bombe casuali
     
-    let numberCell = 0
-
-    const maxScore = numberCell - totalBombs;
-    
-    
-
     const selMode = document.getElementById('mode');
     
     let mode = selMode.value;
@@ -77,7 +42,7 @@ function () {
 
     grid.innerHTML = '';
 
-    while (bombsList.length < totalBombs) {
+    while (bombsList.length <= totalBombs) {
         const number = Math.floor(Math.random() * numberCell) + 1;
         if (!bombsList.includes(number)) bombsList.push(number);
     }
@@ -90,6 +55,8 @@ function () {
         const cell = document.createElement('div');
         cell.classList.add('cell','button-55');
         cell.classList.add(classed);
+
+        cell.innerHTML = i;
         
         
     
@@ -97,9 +64,16 @@ function () {
     
         cell.addEventListener('click', function () {
             // ! Controllo che la cella non sia stata già cliccata
+            if (elementClicked.includes(i)) {
+
+            } else {
+                elementClicked.push(i);
+            }
+
+            console.log(elementClicked);
+            
             if (cell.classList.add('cell-clicked')) return;
 
-        
             if (bombsList.includes(i)) {
                 // Se è una bomba....
                 cell.classList.add('cell-bomb');
@@ -110,12 +84,55 @@ function () {
                 updateScore();
             }
             
-          });
+        });
     
     }
+
   
 })
+
+// # BONUS
+// Funzione che rivela tutte le bombe
+function revealAllBombs() {
+    const cells = document.querySelectorAll('.cell');
+    for (let i = 1; i <= cells.length; i++) {
+      // controllo se la cella è una bomba
+      if (bombsList.includes(i)) {
+        const cellToReveal = cells[i - 1];
+        cellToReveal.classList.add('cell-bomb');
+      }
+    }
+}
+  
+
+function endGame(isVictory) {
+    if (isVictory === true) {
+      // Coloriamo di verde e cambiamo il messaggio
+      endGameScreen.classList.add('win');
+      boomElement.classList.add('hidden');
+      winElement.classList.remove('hidden');
+      
+    } else {
+      // Riveliamo tutte le bombe
+      revealAllBombs();
+    }
+  
+    // Mostriamo la schermata rimuovendo la classe
+    endGameScreen.classList.remove('hidden');
+}
+
+// Funzione per aggiornare il punteggio
+function updateScore() {
+    // Lo inserisco nel contatore
+    scoreCounter.innerText = elementClicked.length;
+    // Controlliamo se l'utente ha vinto
+    if (elementClicked.length == (numberCell - totalBombs)) endGame(true);
+}
+
+// Funzione per ricaricare la pagina
+function playAgain() {
+    location.reload();
+  }
+
 // Gestiamo il click sul tasto rigioca
 playAgainButton.addEventListener('click', playAgain);
-
-
