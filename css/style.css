@@ -4,13 +4,17 @@
     box-sizing: border-box;
 }
 
-.score-container{
-    padding: 20px;
-    padding-top: 0;
+
+.score {
+    width: 100%;
+	font-size: 29px;
+	display: flex;
+
+	justify-content: space-between;
 }
 
 .game-container{
-    width: 800px;
+    width: 700px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -35,7 +39,7 @@ body{
 
 h1{
     font-family: 'Rubik Doodle Shadow', system-ui, sans-serif;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .game-board{
@@ -53,18 +57,18 @@ h1{
 }
 
 .cell{
-    width: calc(116px - 20px);
-    height: calc(116px - 20px);
+    width: calc(110px - 20px);
+    height: calc(110px - 20px);
 }
 
 .cell-81{
-    width: calc(100px - 20px);
-    height: calc(100px - 20px);
+    width: calc(90px - 20px);
+    height: calc(90px - 20px);
 }
 
 .cell-100{
-    width: calc(90px - 20px);
-    height: calc(90px - 20px);
+    width: calc(85px - 20px);
+    height: calc(85px - 20px);
 }
 
 /* CSS */

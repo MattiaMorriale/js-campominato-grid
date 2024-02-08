@@ -21,15 +21,21 @@
         <img class="position-absolute top-0 d-none d-lg-block" id="tommaso" src="img/paper.svg" alt="">
         <!-- game-container -->
         <div class="game-container">
-            <div class="score-container d-flex gap-3 ">
-                <select class="button-55" id="mode">
-                    <option selected>Scegli la Modalità</option>
-                    <option value="1">Facile</option>
-                    <option value="2">Medio</option>
-                    <option value="3">Difficile</option>
-                </select>
-                <button class="button-55" id="play">Avvia</button>
-                <h1>Campo Minato</h1>
+            <div class="score-container d-flex gap-3 flex-wrap ">
+                <div class="d-flex justify-content-between w-100">
+                    <select class="button-55" id="mode">
+                        <option selected>Scegli la Modalità</option>
+                        <option value="1">Facile</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Difficile</option>
+                    </select>
+                    <button class="button-55" id="play">Avvia</button>
+                    <h1>Campo Minato</h1>
+                </div>
+                <div class="score">
+                    <span class="score-label">SCORE</span>
+                    <span class="score-counter">00000</span>
+                </div>
             </div>
             
             <!-- grid -->
